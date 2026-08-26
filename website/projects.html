@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Pat</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Technical Projects</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="project-card">
+      <h2>System Watchdog & Observability Service</h2>
+      <p>Lightweight system monitoring utility that tracks CPU, RAM, and Disk metrics with automated alert throttling to prevent notification fatigue.</p>
+      <ul>
+        <li>Built automated CI/CD pipeline using <strong>GitHub Actions</strong> and <code>pytest</code> with mock objects.</li>
+        <li>Packaged for production using <strong>Docker containers</strong> and Linux <code>systemd</code> background daemons.</li>
+      </ul>
+    </section>
+
+    <section class="project-card">
+      <h2>Cloud Resume Infrastructure (Terraform & AWS)</h2>
+      <p>Serverless resume site hosted globally using Infrastructure as Code (IaC).</p>
+      <ul>
+        <li>Provisioned S3 storage and CloudFront CDN using <strong>Terraform</strong>.</li>
+        <li>Secured access using AWS <strong>Origin Access Control (OAC)</strong> and custom bucket policies.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
