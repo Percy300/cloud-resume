@@ -73,7 +73,7 @@ The repository uses **GitHub Actions** to enforce a quality-gated deployment wor
 
 ### 1. Clone Repository & Setup Virtual Environment
 ```bash
-git clone [https://github.com/](https://github.com/)<YOUR_USERNAME>/cloud-resume.git
+git clone [https://github.com/](https://github.com/)Percy300/cloud-resume.git
 cd cloud-resume
 
 # Create and activate Python virtual environment
