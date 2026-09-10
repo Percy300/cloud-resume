@@ -9,6 +9,7 @@
 <body>
   <header>
     <h1>Pat</h1>
+    <p>Page Views: <span id="counter">Loading...</span></p>
     <p class="subtitle">Computer Science Major | Aspiring Cloud & Systems Engineer</p>
     <nav>
       <a href="index.html" class="active">Home</a>
@@ -30,5 +31,21 @@
       </ul>
     </section>
   </main>
+  <script>
+  const apiUrl = "https://h8clk03vw3.execute-api.us-east-1.amazonaws.com/count";
+
+  async function updateCounter() {
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      document.getElementById("counter").innerText = data.views;
+    } catch (error) {
+      console.error("Error fetching visitor count:", error);
+      document.getElementById("counter").innerText = "Unavailable";
+    }
+  }
+
+  updateCounter();
+</script>
 </body>
 </html>
