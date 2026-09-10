@@ -103,11 +103,5 @@ S3_BUCKET_NAME	= Name of the target private S3 bucket
 CLOUDFRONT_DISTRIBUTION_IDTarget = CloudFront distribution ID for cache purges
 
 
-📄 License
+License
 This project is open-source and available under the MIT License.
-
-
-<ElicitationsGroup message="Where should we head next?">
-  <Elicitation label="Add Terraform formatting and validation checks to GitHub Actions" query="Show me how to add terraform fmt and terraform validate steps to my GitHub Actions workflow."/>
-  <Elicitation label="Draft an architecture post-mortem blog post" query="Draft a technical blog post detailing the architecture, design choices, and CI/CD testing strategies used in this AWS Cloud Resume project."/>
-</ElicitationsGroup>
