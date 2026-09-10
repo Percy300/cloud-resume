@@ -2,6 +2,11 @@ import json
 import importlib.util
 from unittest.mock import patch
 
+# Set mock AWS environment variables before loading func.py
+os.environ["AWS_DEFAULT_REGION"] = "us-east-1"
+os.environ["AWS_ACCESS_KEY_ID"] = "testing"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "testing"
+
 # Dynamically import func.py from the 'lambda' directory to avoid keyword conflicts
 spec = importlib.util.spec_from_file_location("func", "lambda/func.py")
 func_module = importlib.util.module_from_spec(spec)
