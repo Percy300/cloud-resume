@@ -3,49 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pat | Cloud Engineer Portfolio</title>
+  <title>Pat | Cloud & Systems Engineer</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Modern Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Pat</h1>
-    <p>Page Views: <span id="counter">Loading...</span></p>
-    <p class="subtitle">Computer Science Major | Aspiring Cloud & Systems Engineer</p>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="projects.html">Projects</a>
-    </nav>
+
+  <header class="site-header">
+    <div class="container header-flex">
+      <div class="header-brand">
+        <h1>Pat</h1>
+        <p class="subtitle">Computer Science Major &bull; Aspiring Cloud & Systems Engineer</p>
+      </div>
+      <div class="header-meta">
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="#projects">Projects</a>
+        </nav>
+        <div class="counter-badge" title="Total Page Views">
+          <svg class="eye-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span>Views: <strong id="counter">Loading...</strong></span>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <!-- About Section -->
+    <section class="card">
       <h2>About Me</h2>
-      <p>Computer Science student focused on cloud infrastructure automation, system performance, and modern DevOps practices.</p>
+      <p class="lead">
+        Computer Science student focused on cloud infrastructure automation, system performance, and modern DevOps practices. Experienced in building serverless architectures, codifying infrastructure, and automating deployment pipelines.
+      </p>
     </section>
 
-    <section>
-      <h2>Certifications & Fundamentals</h2>
-      <ul>
-        <li><strong>Certifications:</strong> LPI Linux Essentials, Python Institute Associate</li>
-        <li><strong>Core Tech:</strong> Python, Linux (Shell/Bash), Terraform, Docker, pytest, Git, AWS (S3, CloudFront, IAM)</li>
+    <!-- Technical Skills Grid -->
+    <section class="card">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Cloud & Infrastructure</h3>
+          <ul class="tag-list">
+            <li>AWS (S3, CloudFront, Lambda)</li>
+            <li>API Gateway</li>
+            <li>DynamoDB</li>
+            <li>IAM Least-Privilege</li>
+            <li>Terraform (IaC)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>DevOps & Automation</h3>
+          <ul class="tag-list">
+            <li>GitHub Actions (CI/CD)</li>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>Linux / Bash</li>
+            <li>systemd</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Software & Testing</h3>
+          <ul class="tag-list">
+            <li>Python 3.12</li>
+            <li>pytest</li>
+            <li>unittest.mock</li>
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript (Fetch)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="card" id="projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-list">
+        
+        <!-- Project 1: Cloud Resume -->
+        <article class="project-card">
+          <div class="project-header">
+            <h3>Serverless Cloud Resume & CI/CD Pipeline</h3>
+            <span class="project-tag">AWS & Terraform</span>
+          </div>
+          <p>Production-grade portfolio website built using serverless AWS services and fully automated continuous integration/deployment.</p>
+          <ul class="bullet-list">
+            <li>Codified 100% of AWS infrastructure in <strong>Terraform</strong> (S3, CloudFront OAC, API Gateway v2, Lambda, DynamoDB).</li>
+            <li>Engineered an automated <strong>GitHub Actions</strong> CI/CD pipeline to deploy code changes on every <code>git push</code>.</li>
+            <li>Built a full-stack visitor counter microservice using <strong>Python (Lambda)</strong> with atomic increments in <strong>DynamoDB</strong>.</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/<YOUR_USERNAME>/cloud-resume" target="_blank" rel="noopener" class="btn btn-outline">GitHub Repo</a>
+          </div>
+        </article>
+
+        <!-- Project 2: System Watchdog -->
+        <article class="project-card">
+          <div class="project-header">
+            <h3>System Watchdog (`system-watchdog`)</h3>
+            <span class="project-tag">Python & Linux</span>
+          </div>
+          <p>Lightweight Linux system monitoring daemon that tracks system resource utilization and sends automated webhook alerts.</p>
+          <ul class="bullet-list">
+            <li>Configured background deployment using Linux <strong>systemd</strong> service management.</li>
+            <li>Implemented comprehensive unit test coverage using <strong>pytest</strong> and <strong>unittest.mock</strong> to simulate webhook alerts.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="card">
+      <h2>Certifications & Education</h2>
+      <ul class="bullet-list">
+        <li><strong>LPI Linux Essentials</strong> — Linux Professional Institute</li>
+        <li><strong>Python Institute Associate (PCAP)</strong> — Python Institute</li>
+        <li><strong>B.S. Computer Science</strong> — In Progress</li>
       </ul>
     </section>
   </main>
+
+  <footer class="site-footer container">
+    <p>&copy; 2026 Pat. Built with AWS, Terraform, and GitHub Actions.</p>
+  </footer>
+
   <script>
-  const apiUrl = "https://h8clk03vw3.execute-api.us-east-1.amazonaws.com/count";
+    const apiUrl = "https://h8clk03vw3.execute-api.us-east-1.amazonaws.com/count";
 
-  async function updateCounter() {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      document.getElementById("counter").innerText = data.views;
-    } catch (error) {
-      console.error("Error fetching visitor count:", error);
-      document.getElementById("counter").innerText = "Unavailable";
+    async function updateCounter() {
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        document.getElementById("counter").innerText = data.views;
+      } catch (error) {
+        console.error("Error fetching visitor count:", error);
+        document.getElementById("counter").innerText = "Offline";
+      }
     }
-  }
 
-  updateCounter();
-</script>
+    updateCounter();
+  </script>
 </body>
 </html>
