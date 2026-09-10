@@ -13,25 +13,27 @@ A production-ready, highly available, serverless portfolio website built on Amaz
 ---
 
 ## 🏛 Architecture Overview
-[ Client Browser ]
-                              │
-                              ▼
-                [ Amazon CloudFront (CDN) ]
-                   /                     \
-                  /                       \
-    (Static Web Assets)               (API Traffic)
-                /                           \
-               ▼                             ▼
-   [ S3 Bucket (Private) ]         [ API Gateway (HTTP v2) ]
-    * CloudFront OAC                  * CORS Configured
-                                             │
-                                             ▼
-                                    [ AWS Lambda (Python) ]
-                                     * Atomic Counter
-                                             │
-                                             ▼
-                                   [ Amazon DynamoDB ]
-                                     * On-Demand / Pay-per-request
+```
+                          [ Client Browser ]
+                                  │
+                                  ▼
+                    [ Amazon CloudFront (CDN) ]
+                       /                     \
+                      /                       \
+        (Static Web Assets)               (API Traffic)
+                    /                           \
+                   ▼                             ▼
+       [ S3 Bucket (Private) ]         [ API Gateway (HTTP v2) ]
+        * CloudFront OAC                  * CORS Configured
+                                                 │
+                                                 ▼
+                                        [ AWS Lambda (Python) ]
+                                         * Atomic Counter
+                                                 │
+                                                 ▼
+                                       [ Amazon DynamoDB ]
+                                         * On-Demand / Pay-per-request
+```
 
 ### Key Architectural Highlights
 * **Zero-Trust Static Hosting:** The S3 bucket is completely private. Access is granted exclusively to CloudFront via **Origin Access Control (OAC)** and IAM bucket policies.
