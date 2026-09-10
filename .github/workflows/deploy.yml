@@ -4,16 +4,17 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'website/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Checkout repository files onto the runner
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      # 2. Authenticate securely with AWS using GitHub Secrets
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -21,6 +22,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Sync Website Files to S3
+      # 3. Sync local website static files to S3 bucket
+      - name: Sync Website to S3
         run: |
           aws s3 sync ./website s3://${{ secrets.S3_BUCKET_NAME }} --delete
+
+      # 4. Clear CloudFront edge cache so changes reflect instantly
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
