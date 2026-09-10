@@ -273,3 +273,15 @@ code {
     margin-right: 1rem;
   }
 }
+
+.verify-link {
+  color: #38bdf8; 
+  text-decoration: none;
+  font-size: 0.85em;
+  margin-left: 0.35rem;
+  font-weight: 600;
+}
+
+.verify-link:hover {
+  text-decoration: underline;
+}
